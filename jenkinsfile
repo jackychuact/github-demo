@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Verify') {
             steps {
-                // This command lists the files to verify they were checked out correctly update for 2nd times
+                // This command lists the files to verify they were checked out correctly update for 3rd times
                 bat 'dir'
             }
         }
