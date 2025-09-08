@@ -1,11 +1,14 @@
 pipeline {
     agent any
-
     stages {
-        stage('Verify') {
+        stage('Build') {
             steps {
-                // This command lists the files to verify they were checked out correctly 2nd times
-                bat 'dir'
+                echo 'Building...'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
             }
         }
     }
