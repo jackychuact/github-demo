@@ -1,15 +1,19 @@
+// Updated Jenkinsfile
 pipeline {
     agent any
+
     stages {
-        stage('Build') {
+        stage('Verify') {
             steps {
-                echo 'Building...'
+                bat 'dir'
             }
         }
-        stage('Test') {
+
+        stage('Build Docker Image') {
             steps {
-                echo 'Testing...'
+                bat 'docker build -t dockerjvc79/github-demo .'
             }
         }
-    }
-}
+
+        stage('Push Docker Image') {
+            steps {
